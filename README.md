@@ -1,70 +1,232 @@
-# Getting Started with Create React App
+<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="./assets/logo.png" alt="Logo" width="auto" height="80">
+  <h1 align="center">Stripe Payment System Integration with React</h1>
 
-## Available Scripts
+  <p align="center">
+    <i>
+    This checklist will set up and integrate the stripe payment system within React.   We will complete the following:
 
-In the project directory, you can run:
+- Sign up / Set up of Stripe account
 
-### `npm start`
+- Set up and configuration of frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Set up and configuration of backend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Verify successful payment
+  </i>
+  <br />
+  <br />
+  <p align="center">
+  <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">Front End</a>
+  ·
+  <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">Back End</a>
 
-### `npm test`
+</p>
+</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Table of Contents
 
-### `npm run build`
+- [Setting up a Stripe account](#setting-up-stripe-account)
+  - [Setting up the Frontend ](#set-up-frontend)
+  - [Set up Frontend Configuration](#set-up-fe-configuration)
+  - [Setting up the Backend ](#set-up-backend)
+  - [Set up Backend Configuration](#set-up-fe-configuration)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# setting-up-stripe-account
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Go to the <a href="https://stripe.com">Stripe</a> homepage and create an account (no credit card information is needed for developer testing).
+2. Navigate to **Home>>Developers>>API** Keys. There will be 2 API keys:
 
-### `npm run eject`
+- **Publishable key**: this key starts with “pk“. This can be visible in the frontend code.
+- **Secret key**: this key starts with “sk“ and should be hidden in the .env file. This will go in the backend code.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center">
+  <img src="./assets/api.png" alt="Logo" width="auto" height="250">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**NOTE**
+These API keys are for the development testing environment. There are different API keys for the production environment.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+The main frameworks and technologies used to build our Project are the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React (with _Hooks_ and _Context_)
+- React Router
+- Styled Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## [:top:](#table-of-contents)
 
-### Code Splitting
+## set-up-frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Set up the React application and change directory into **/frontend**.
 
-### Analyzing the Bundle Size
+```
+   mkdir react-stripe-project
+   cd react-stripe-project
+   npx create-react-app frontend
+   cd frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install Axios and React Stripe Checkout.
 
-### Making a Progressive Web App
+```
+   npm install axios react-stripe-checkout
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. In the **src/components** directory, create a **Checkout.js** file.
 
-### Advanced Configuration
+```
+   touch Checkout.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Create directory **constants** and create files **server.js** and **stripe.js**.
 
-### Deployment
+```
+   mkdir constants
+   cd constants
+   touch server.js stripe.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## set-up-fe-configuration
 
-### `npm run build` fails to minify
+5. In the **App.js** file add the below code. The below is importing the <Checkout/> module from **Checkout.js** file just created.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+import React, { Component } from "react";
+import Checkout from "./Checkout";
+import "./App.css";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          <Checkout
+            name={"Your Company Name"}
+            description={"Item that you sold"}
+            amount={4.99}
+          />
+        </p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+---
+
+**NOTE**
+Do not forget to pass the appropriate variables in this area. For example company name, item purchased, and amount to process. This is what will be shown in the customer’s credit card statement.
+
+---
+
+6. In the **Checkout.js** file add the below code. Below the user data is submitted through <StripeCheckout/>. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the backend (once we set this up). The backend will then post the payment to Stripe.
+
+```javascript
+import React from "react";
+import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
+
+import STRIPE_PUBLISHABLE from "./constants/stripe";
+import PAYMENT_SERVER_URL from "./constants/server";
+
+const CURRENCY = "EUR";
+
+const fromDollarToCent = (amount) => parseInt(amount * 100);
+
+const successPayment = (data) => {
+  alert("Payment Successful");
+};
+
+const errorPayment = (data) => {
+  alert("Payment Error");
+};
+
+const onToken = (amount, description) => (token) =>
+  axios
+    .post(PAYMENT_SERVER_URL, {
+      description,
+      source: token.id,
+      currency: CURRENCY,
+      amount: fromDollarToCent(amount),
+    })
+    .then(successPayment)
+    .catch(errorPayment);
+
+const Checkout = ({ name, description, amount }) => (
+  <StripeCheckout
+    name={name}
+    description={description}
+    amount={fromDollarToCent(amount)}
+    token={onToken(amount, description)}
+    currency={CURRENCY}
+    stripeKey={"YOUR_STRIPE_PUBLISHABLE_KEY"}
+    zipCode
+    email
+    allowRememberMe
+  />
+);
+
+export default Checkout;
+```
+
+---
+
+**NOTE**
+On line 38 use the API key that starts with “pk“ not “sk“. Do not forget to put the stripe key in “quotes”. On line 8 in the above use the appropriate currency, this example uses euro. For other supported currencies see <a href="https://stripe.com/docs/currencies">Stripe Supported Currencies</a>.
+
+---
+
+7.  In the **src/components/constants** directory, add the following code to the **server.js** file. This designates which server to call. When this application is ready for production, this is where to put the backend production address. For the development environment use localhost port 8080.
+
+```javascript
+const PAYMENT_SERVER_URL =
+  process.env.NODE_ENV === "production"
+    ? "http://localhost:8080"
+    : "http://localhost:8080";
+
+export default PAYMENT_SERVER_URL;
+```
+
+8. In the  **src/components/constants** directory, add the following code to the **stripe.js** file. Use the publishable key starting with “pk”. Add one for the production environment (live) and testing environment (test). These are both located in the Stripe dashboard.
+
+```javascript
+const STRIPE_PUBLISHABLE =
+  process.env.NODE_ENV === "production"
+    ? "pk_live_MY_PUBLISHABLE_KEY"
+    : "pk_test_MY_PUBLISHABLE_KEY";
+
+export default STRIPE_PUBLISHABLE;
+```
+
+9. At this point the frontend environment is set up. Start the server by running the below:
+
+```
+cd ~/frontend
+npm start
+```
+
+<p align="center">
+If successful the below screen will display:
+
+<p align="center">
+ <img src="./assets/frontend.png" alt="Logo" width="auto" height="250">
+
+<p align="center">
+Click “pay with card” and the following pop-up will display:
+
+<p align="center">
+ <img src="./assets/payment.png" alt="Logo" width="auto" height="250">
+
+## [:top:](#table-of-contents)
