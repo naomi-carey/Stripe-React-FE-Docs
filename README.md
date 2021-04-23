@@ -31,8 +31,6 @@
 - [Setting up a Stripe account](#setting-up-stripe-account)
   - [Setting up the Frontend ](#set-up-frontend)
   - [Set up Frontend Configuration](#set-up-fe-configuration)
-  - [Setting up the Backend ](#set-up-backend)
-  - [Set up Backend Configuration](#set-up-fe-configuration)
 
 </br>
 
@@ -228,5 +226,7 @@ Click “pay with card” and the following pop-up will display:
 
 <p align="center">
  <img src="./assets/payment.png" alt="Logo" width="auto" height="250">
+
+10. Continue to the next section to create the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">back end</a>.
 
 ## [:top:](#table-of-contents)
