@@ -8,9 +8,9 @@
     <i>
     This checklist will set up and integrate the stripe payment system within React.   We will complete the following:
 
-- Sign up / Set up of Stripe account
-
-- Set up and configuration of frontend
+- Sign up of Stripe account
+- Set up of frontend
+- Configuration of frontend
 
   </i>
   <br />
