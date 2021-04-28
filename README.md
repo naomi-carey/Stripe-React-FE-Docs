@@ -12,9 +12,6 @@
 
 - Set up and configuration of frontend
 
-- Set up and configuration of backend
-
-- Verify successful payment
   </i>
   <br />
   <br />
