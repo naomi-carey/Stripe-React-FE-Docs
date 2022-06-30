@@ -124,7 +124,7 @@ Do not forget to pass the appropriate variables in this area. For example compan
 
 ---
 
-6. In the **Checkout.js** file add the below code. Below the user data is submitted through <StripeCheckout/>. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the backend (once we set this up). The backend will then post the payment to Stripe.
+6. In the **Checkout.js** file add the below code. Below the user data is submitted through StripeCheckout. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the backend (once we set this up). The backend will then post the payment to Stripe.
 
 ```javascript
 import React from "react";
