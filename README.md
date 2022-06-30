@@ -55,8 +55,6 @@ The main frameworks and technologies used to build our Project are the following
 - React Router
 - Styled Components
 
-## [:top:](#table-of-contents)
-
 ## set-up-frontend
 
 1. Set up the React application and change directory into **/frontend**.
