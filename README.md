@@ -27,7 +27,7 @@
 
 - [Setting up a Stripe account](#setting-up-stripe-account)
   - [Set up the Frontend ](#set-up-frontend)
-  - [Set up Frontend Configuration](#set-up-fe-configuration)
+  - [Configure the Frontend](#set-up-fe-configuration)
 
 </br>
 
