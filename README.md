@@ -177,7 +177,7 @@ export default Checkout;
 ---
 
 **NOTE**
-On line 38 use the API key that starts with “pk“ not “sk“. Do not forget to put the stripe key in “quotes”. On line 8 in the above use the appropriate currency, this example uses euro. For other supported currencies see <a href="https://stripe.com/docs/currencies">Stripe Supported Currencies</a>.
+Under the variable "stripeKey=" make sure to use the API key that starts with “pk“ not “sk“. Do not forget to put the stripe key in “quotes”. Also use the appropriate currency for your country, this example uses euro. For other supported currencies see <a href="https://stripe.com/docs/currencies">Stripe Supported Currencies</a>.
 
 ---
 
