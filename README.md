@@ -26,7 +26,7 @@
 # Table of Contents
 
 - [Setting up a Stripe account](#setting-up-stripe-account)
-  - [Setting up the Frontend ](#set-up-frontend)
+  - [Set up the Frontend ](#set-up-frontend)
   - [Set up Frontend Configuration](#set-up-fe-configuration)
 
 </br>
