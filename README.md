@@ -40,7 +40,7 @@
 
 ---
 
-**NOTE -**
+**NOTE:**
 These API keys are for the development testing environment. There are different API keys for the production environment.
 
 ---
@@ -110,7 +110,7 @@ export default App;
 
 ---
 
-**NOTE**
+**NOTE:**
 Do not forget to pass the appropriate variables in this area. For example company name, item purchased, and amount to process. This is what will be shown in the customer’s credit card statement.
 
 ---
