@@ -6,19 +6,15 @@
 
   <p align="center">
     <i>
-    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete this <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">front end</a> section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">back end</a> section to successfully integrate the payment system.  The main frameworks and technologies used to build our project are the following:
-
-- React (with _Hooks_ and _Context_)
-- React Router
-- Styled Components
-
+    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete this <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">frontend</a> section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">backend</a> section to successfully integrate the payment system.  
+      
   </i>
   <br />
   <br />
   <p align="center">
-  <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">Front End</a>
+  <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">Frontend</a>
   ·
-  <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">Back End</a>
+  <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">Backend</a>
 
 </p>
 </br>
@@ -26,8 +22,8 @@
 # Table of Contents
 
 - [Set up a Stripe account](#setting-up-stripe-account)
-- [Set up the front end ](#set-up-frontend)
-- [Configure the front end](#set-up-fe-configuration)
+- [Set up the frontend ](#set-up-frontend)
+- [Configure the frontend](#set-up-fe-configuration)
 
 </br>
 
@@ -36,8 +32,8 @@
 1. Go to the <a href="https://dashboard.stripe.com/register">Stripe</a> registration page and follow the instructions to create an account (no credit card information is needed for developer testing).
 2. Once logged in to your Stripe account navigate to **Home>>Developers>>API** Keys. Stripe authenticates your API requests using your account’s API keys. There will be 2 API keys available:
 
-- **Publishable key**: this key starts with “pk“. This can be visible in the front end code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
-- **Secret key**: this key starts with “sk“. This will go in the back end code. This key must be secret and stored securely in your web or mobile app’s back end code (such as in the .env file. ).
+- **Publishable key**: this key starts with “pk“. This can be visible in the frontend code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
+- **Secret key**: this key starts with “sk“. This will go in the backend code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file. ).
 
 <p align="center">
   <img src="./assets/api.png" alt="Logo" width="auto" height="250">
@@ -50,7 +46,7 @@ These API keys are for the development testing environment. There are different 
 ---
 
 
-## set-up-front end
+## set-up-frontend
 
 1. Set up the React application and change directory into **/frontend**.
 
@@ -119,7 +115,7 @@ Do not forget to pass the appropriate variables in this area. For example compan
 
 ---
 
-6. In the **Checkout.js** file add the below code. Below the user data is submitted through StripeCheckout. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the back end (once we set this up in the next section). The back end will then post the payment to Stripe.
+6. In the **Checkout.js** file add the below code. Below the user data is submitted through StripeCheckout. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the backend (once we set this up in the next section). The backend will then post the payment to Stripe.
 
 ```javascript
 import React from "react";
@@ -187,7 +183,7 @@ const PAYMENT_SERVER_URL =
 export default PAYMENT_SERVER_URL;
 ```
 
-8. In the  **src/components/constants** directory, add the following code to the **stripe.js** file. Use the publishable key starting with “pk”. Add one for the production environment (live) and testing environment (test). These are both located in the Stripe dashboard.
+8. In the  **src/components/constants** directory, add the following code to the **stripe.js** file. Use the publishable key starting with “pk”. Add one for the production environment (live) and testing environment (test). These are both located in the Stripe dashboard **Home>>Developers>>API** Keys.
 
 ```javascript
 const STRIPE_PUBLISHABLE =
