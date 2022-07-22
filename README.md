@@ -37,7 +37,7 @@
 2. Once logged in to your Stripe account navigate to **Home>>Developers>>API** Keys. Stripe authenticates your API requests using your account’s API keys. There will be 2 API keys available:
 
 - **Publishable key**: this key starts with “pk“. This can be visible in the front end code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
-- **Secret key**: this key starts with “sk“. This will go in the back end code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file. ).
+- **Secret key**: this key starts with “sk“. This will go in the back end code. This key must be secret and stored securely in your web or mobile app’s back end code (such as in the .env file. ).
 
 <p align="center">
   <img src="./assets/api.png" alt="Logo" width="auto" height="250">
@@ -124,7 +124,7 @@ Do not forget to pass the appropriate variables in this area. For example compan
 
 ---
 
-6. In the **Checkout.js** file add the below code. Below the user data is submitted through StripeCheckout. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the backend (once we set this up). The backend will then post the payment to Stripe.
+6. In the **Checkout.js** file add the below code. Below the user data is submitted through StripeCheckout. This will send all the credit card credentials to stripe and then will return a TOKEN ID. This TOKEN ID will be used to ping the node.js express server in the back end (once we set this up in the next section). The back end will then post the payment to Stripe.
 
 ```javascript
 import React from "react";
@@ -203,7 +203,7 @@ const STRIPE_PUBLISHABLE =
 export default STRIPE_PUBLISHABLE;
 ```
 
-9. At this point the frontend environment is set up. Start the server by running the below:
+9. At this point the front end environment is set up. Start the server by running the below:
 
 ```
 cd ~/frontend
