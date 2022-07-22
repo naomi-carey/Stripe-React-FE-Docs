@@ -6,11 +6,11 @@
 
   <p align="center">
     <i>
-    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete both this frontend section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">Back End</a> checklist to successfully integrate the payment system.  We will complete the following tasks:
+    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete this <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">front end</a> section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">back end</a> section to successfully integrate the payment system.  We will complete the following tasks:
 
 - Create a Stripe account
-- Set up the frontend
-- Configure the frontend
+- Set up the front end
+- Configure the front end
 
   </i>
   <br />
@@ -25,9 +25,9 @@
 
 # Table of Contents
 
-- [Setting up a Stripe account](#setting-up-stripe-account)
-  - [Set up the Frontend ](#set-up-frontend)
-  - [Configure the Frontend](#set-up-fe-configuration)
+- [Set up a Stripe account](#setting-up-stripe-account)
+- [Set up the front end ](#set-up-frontend)
+- [Configure the front end](#set-up-fe-configuration)
 
 </br>
 
@@ -36,8 +36,8 @@
 1. Go to the <a href="https://dashboard.stripe.com/register">Stripe</a> registration page and follow the instructions to create an account (no credit card information is needed for developer testing).
 2. Once logged in to your Stripe account navigate to **Home>>Developers>>API** Keys. Stripe authenticates your API requests using your account’s API keys. There will be 2 API keys available:
 
-- **Publishable key**: this key starts with “pk“. This can be visible in the frontend code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
-- **Secret key**: this key starts with “sk“. This will go in the backend code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file. ).
+- **Publishable key**: this key starts with “pk“. This can be visible in the front end code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
+- **Secret key**: this key starts with “sk“. This will go in the back end code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file. ).
 
 <p align="center">
   <img src="./assets/api.png" alt="Logo" width="auto" height="250">
@@ -55,7 +55,7 @@ The main frameworks and technologies used to build our Project are the following
 - React Router
 - Styled Components
 
-## set-up-frontend
+## set-up-front end
 
 1. Set up the React application and change directory into **/frontend**.
 
