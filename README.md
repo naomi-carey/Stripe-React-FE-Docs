@@ -30,17 +30,17 @@
 # setting-up-stripe-account
 
 1. Go to the <a href="https://dashboard.stripe.com/register">Stripe</a> registration page and follow the instructions to create an account (no credit card information is needed for developer testing).
-2. Once logged in to your Stripe account navigate to **Home>>Developers>>API** Keys. Stripe authenticates your API requests using your account’s API keys. There will be 2 API keys available:
+2. Once logged in to your Stripe account navigate to **Home>>Developers>>API** Keys. Stripe authenticates your API requests using your account’s API keys. There will be two API keys available:
 
-- **Publishable key**: this key starts with “pk“. This can be visible in the frontend code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
-- **Secret key**: this key starts with “sk“. This will go in the backend code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file. ).
+- **Publishable key**: This key starts with “pk“. This can be visible in the frontend code and can be publicly-accessible in your web or mobile app’s code (such as checkout.js). 
+- **Secret key**: This key starts with “sk“. This will go in the backend code. This key must be secret and stored securely in your web or mobile app’s backend code (such as in the .env file).
 
 <p align="center">
   <img src="./assets/api.png" alt="Logo" width="auto" height="250">
 
 ---
 
-**NOTE**
+**NOTE -**
 These API keys are for the development testing environment. There are different API keys for the production environment.
 
 ---
