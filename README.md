@@ -6,11 +6,11 @@
 
   <p align="center">
     <i>
-    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete this <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">front end</a> section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">back end</a> section to successfully integrate the payment system.  We will complete the following tasks:
+    This checklist will set up and integrate the stripe payment system within a <a href="https://reactjs.org/ ">React</a> application.  You will need to complete this <a href="https://github.com/naomi-carey/Stripe-React-FE-Docs">front end</a> section and the <a href="https://github.com/naomi-carey/Stripe-React-BE-Docs">back end</a> section to successfully integrate the payment system.  The main frameworks and technologies used to build our project are the following:
 
-- Create a Stripe account
-- Set up the front end
-- Configure the front end
+- React (with _Hooks_ and _Context_)
+- React Router
+- Styled Components
 
   </i>
   <br />
@@ -49,11 +49,6 @@ These API keys are for the development testing environment. There are different 
 
 ---
 
-The main frameworks and technologies used to build our Project are the following:
-
-- React (with _Hooks_ and _Context_)
-- React Router
-- Styled Components
 
 ## set-up-front end
 
